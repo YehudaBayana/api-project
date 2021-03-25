@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- bootstrap link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <!-- font awesome link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <title>פרוייקט פסח</title>
+  </head>
+  <body>
+    <div class="container1" id="container1Id">
+      <header class="header">
+        <h1 id="title" class="text-center">freeCodeCamp Survey Form</h1>
+        <p id="description" class="description text-center">
+          Thank you for taking the time to help us improve the platform
+        </p>
+      </header>
+      <form id="survey-form" onsubmit="return false">
+        <div class="form-group">
+          <label id="name-label" for="name">firs Name</label>
+          <input
+            type="text"
+            name="firsName"
+            id="firstName"
+            class="form-control"
+            placeholder="Enter your first name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label id="name-label" for="name">last Name</label>
+          <input
+            type="text"
+            name="lastName"
+            id="lastName"
+            class="form-control"
+            placeholder="Enter your last name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label id="email-label" for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="form-control"
+            placeholder="Enter your Email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label id="email-confirm-label" for="email-confirm"
+            >Email-confirm</label
+          >
+          <input
+            type="email"
+            name="email-confirm"
+            id="emailConfirm"
+            class="form-control"
+            placeholder="confirm your Email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label id="phone-label" for="phone">phone</label>
+          <input
+            type="phone"
+            name="phone"
+            id="phone"
+            class="form-control"
+            placeholder="Enter your phone"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label id="number-label" for="number"
+            >Age<span class="clue"></span
+          ></label>
+          <input
+            type="number"
+            name="age"
+            id="age"
+            min="10"
+            max="99"
+            class="form-control"
+            placeholder="Age"
+          />
+        </div>
+
+        <div class="form-group">
+          <button id="submit" class="submit-button" onclick="createNewUser()">
+            Submit
+          </button>
+          <button
+            onclick="cancelAddUserBtn()"
+            id="cancel"
+            class="cancel-button"
+          >
+            cancel
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div id="main">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="image001.png" alt="" height="60px" /> </a
+          ><a class="navbar-brand" href="#">
+            <img src="indi_com.png" alt="" height="60px" />
+          </a>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#"
+                  >Home
+                  <span class="sr-only"></span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <button class="openbtn" onclick="openNav()">&#9776;</button>
+        </div>
+      </nav>
+      <div id="mySidebar" class="sidebar">
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+          >&times;</a
+        >
+      </div>
+
+      <div class="container top-buttons d-flex justify-content-evenly">
+        <button
+          onclick="toggleTableCards()"
+          id="toggleButtonId"
+          class="btn btn-primary"
+        >
+          טבלה \ כרטיסיות
+        </button>
+        <button id="addButtonId" class="btn btn-success" onclick="addUserBtn()">
+          הוספה
+        </button>
+      </div>
+      <div class="container" id="tableAndCardsContainer">
+        <img id="loader" />
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <ul class="foote_bottom_ul_amrc">
+          <li><a href="http://webenlance.com">Home</a></li>
+          <li><a href="http://webenlance.com">About</a></li>
+          <li><a href="http://webenlance.com">Services</a></li>
+          <li><a href="http://webenlance.com">Pricing</a></li>
+          <li><a href="http://webenlance.com">Blog</a></li>
+          <li><a href="http://webenlance.com">Contact</a></li>
+        </ul>
+        <h5 class="text-center">
+          Copyright @2021 | Designed With by <strong> Yuda Bayana</strong>
+        </h5>
+
+        <ul class="social_footer_ul">
+          <li>
+            <a href="http://webenlance.com"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+          </li>
+          <li>
+            <a href="http://webenlance.com"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="http://webenlance.com"><i class="fab fa-linkedin"></i></a>
+          </li>
+          <li>
+            <a href="http://webenlance.com"><i class="fab fa-instagram"></i></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script src="main.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
