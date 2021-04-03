@@ -26,13 +26,13 @@ function returnFetch() {
 }
 
 let tableAndCardsContainer = document.getElementById('tableAndCardsContainer');
-let fetchApiResults;
-let catchUserClassShow;
-let catchTableCreation;
-let catchcardsCreation;
+let fetchApiResults = '';
+let catchUserClassShow = '';
+let catchTableCreation = '';
+let catchcardsCreation = '';
 let counterForTableNumbers = 1;
 let counterForCardId = 0;
-let saveOnlyUserCard;
+let saveOnlyUserCard = '';
 async function createClassShowsOfAllDataInApiAndCreateCards() {
   loader.src =
     'https://raw.githubusercontent.com/Codelessly/FlutterLoadingGIFs/master/packages/cupertino_activity_indicator.gif';
@@ -50,11 +50,11 @@ async function createClassShowsOfAllDataInApiAndCreateCards() {
       );
       console.log(catchUserClassShow);
       catchTableCreation += `<tr><th scope="row">${counterForTableNumbers++}</th>
-    <td>${catchUserClassShow.firstName}</td>>
-    <td>${catchUserClassShow.lastName}</td>>
-    <td>${catchUserClassShow.age}</td>>
-    <td>${catchUserClassShow.email}</td>>
-    <td>${catchUserClassShow.phone}</td>>
+    <td>${catchUserClassShow.firstName}</td>
+    <td>${catchUserClassShow.lastName}</td>
+    <td>${catchUserClassShow.age}</td>
+    <td>${catchUserClassShow.email}</td>
+    <td>${catchUserClassShow.phone}</td>
     <tr>`;
       catchcardsCreation += `
     <div class="col" id="userCard${counterForCardId}">
@@ -96,7 +96,8 @@ async function createClassShowsOfAllDataInApiAndCreateCards() {
         <div class="d-flex flex-column align-items-center text-center">
           <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
           <div class="mt-3">
-            <h4>John Doe</h4>
+            <h4>${catchUserClassShow.firstName}
+            ${catchUserClassShow.lastName}</h4>
             <p class="text-secondary mb-1">Full Stack Developer</p>
             <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
             <button class="btn btn-primary">Follow</button>
@@ -333,11 +334,11 @@ function createNewUser() {
         container1Id.style.top = '-1200px';
       } else {
         tbodyId.innerHTML += `<tr><th scope="row">${counterForTableNumbers++}</th>
-    <td>${newUser.firstName}</td>>
-    <td>${newUser.lastName}</td>>
-    <td>${newUser.age}</td>>
-    <td>${newUser.email}</td>>
-    <td>${newUser.phone}</td>>
+    <td>${newUser.firstName}</td>
+    <td>${newUser.lastName}</td>
+    <td>${newUser.age}</td>
+    <td>${newUser.email}</td>
+    <td>${newUser.phone}</td>
     <tr>`;
         container1Id.style.top = '-1200px';
       }
